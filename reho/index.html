@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rehoboth Springs Farm — Company Profile</title>
+<meta name="description" content="Rehoboth Springs Farm is a registered dairy value-addition company in Wakiso Town Council, Uganda, producing Fat-Free Cunda Yoghurt, ghee, eshabwe, appetizer and amaranga.">
+<meta name="theme-color" content="#0C783C">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,600;0,6..12,700;0,6..12,800;1,6..12,400&family=Oswald:wght@500;600;700&family=Playfair+Display:ital,wght@1,600;1,700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green:#0C783C;
+    --green-deep:#006030;
+    --green-bright:#0C843C;
+    --leaf:#2E9B4A;
+    --navy:#0C1A38;
+    --navy-band:#1E3D6E;
+    --mission:#F0A020;
+    --values:#12C4D8;
+    --objectives:#D93696;
+    --goals-top:#2A6FA3;
+    --goals-bot:#7CB85A;
+    --teal:#0D6B6B;
+    --teal-2:#186C6C;
+    --teal-3:#247878;
+    --sky:#C8E8F4;
+    --sky-2:#D4EEF8;
+    --ink:#15211A;
+    --muted:#33443A;
+    --paper:#F3FBF4;
+    --max:1140px;
+    --display:"Oswald",Impact,"Arial Narrow",sans-serif;
+    --sans:"Nunito Sans","Segoe UI",sans-serif;
+    --script:"Playfair Display",Georgia,serif;
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:17.5px;
+    line-height:1.55;
+    overflow-x:hidden;
+    background:
+      radial-gradient(1200px 500px at 50% -80px,#e7f6fc 0%,transparent 70%),
+      linear-gradient(180deg,#cfeaf4 0%,#e7f6d8 42%,#f3fbf4 100%);
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;height:auto}
+  .hero-stage,.org-head,.hang,.hang-card,.banner,.cunda,.prod-grid,.eshabwe-row,.foot-in{min-width:0}
+  a{color:var(--green-deep)}
+  h1,h2,h3,h4{margin:0;line-height:1.1}
+  p{margin:0 0 0.9em}
+  p:last-child{margin-bottom:0}
+  :is(a,button,summary):focus-visible{
+    outline:3px solid var(--values);outline-offset:3px
+  }
+  .sr-only{
+    position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+    overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0
+  }
+  .wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 24px}
+
+  /* green tab headers — same shape as the PDF */
+  .tab{
+    display:inline-flex;align-items:center;
+    background:linear-gradient(180deg,#129447 0%,#0C783C 55%,#006030 100%);
+    color:#fff;
+    font-family:var(--display);
+    font-weight:700;
+    font-size:clamp(22px,3vw,34px);
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    padding:12px 42px 12px 28px;
+    border-radius:0 999px 999px 0;
+    box-shadow:4px 6px 0 rgba(0,48,24,.12);
+    margin:0 0 28px -24px;
+  }
+
+  /* ---------- top bar ---------- */
+  .topbar{
+    position:sticky;top:0;z-index:40;
+    background:var(--green);
+    color:#fff;
+    box-shadow:0 2px 0 var(--green-deep);
+    transition:background .28s ease, box-shadow .28s ease, color .28s ease;
+  }
+  .topbar-in{
+    display:flex;align-items:center;gap:18px;height:58px
+  }
+  .wordmark{
+    font-family:var(--display);font-weight:700;letter-spacing:.08em;
+    color:#fff;text-decoration:none;font-size:18px;margin-right:auto
+  }
+  .nav{display:flex;gap:22px;align-items:center}
+  .nav a{
+    color:#e8f6ea;text-decoration:none;font-weight:700;font-size:14.5px
+  }
+  .nav a:hover{color:#fff;text-decoration:underline;text-underline-offset:4px}
+  .btn{
+    display:inline-block;font-family:var(--sans);font-weight:800;font-size:15px;
+    background:var(--green);color:#fff;text-decoration:none;
+    padding:12px 22px;border-radius:999px;border:2px solid var(--green)
+  }
+  .btn:hover{background:var(--green-deep);border-color:var(--green-deep)}
+  .btn.light{background:#fff;color:var(--green-deep);border-color:#fff}
+  .btn.light:hover{background:#e8f6ea}
+  .btn.ghost{background:transparent;color:#fff;border-color:#fff}
+  .btn.ghost:hover{background:#fff;color:var(--green-deep)}
+  .topbar .btn{padding:8px 16px;background:#fff;color:var(--green-deep);border-color:#fff}
+  .nav-toggle{
+    display:none;background:transparent;border:0;color:#fff;
+    font-weight:800;font-size:15px;cursor:pointer;padding:8px 0
+  }
+  @media (max-width:860px){
+    .nav-toggle{display:block}
+    .wordmark{font-size:15px;letter-spacing:.04em}
+    .nav{
+      display:none;position:absolute;left:0;right:0;top:58px;
+      background:var(--green-deep);flex-direction:column;align-items:stretch;
+      padding:12px 24px 20px;gap:4px
+    }
+    .nav.open{display:flex}
+    .nav a{padding:10px 0;border-bottom:1px solid rgba(255,255,255,.12)}
+    .topbar .btn{display:none}
+  }
+
+  /* ---------- cover / hero (PDF page 1, exact art) ---------- */
+  .hero{
+    position:relative;
+    overflow:hidden;
+    background:linear-gradient(#9ecce8,#c5e6c0);
+  }
+  .hero-stage{position:relative;width:100%}
+  .hero-cover{width:100%;max-width:100%;height:auto;display:block}
+  .hero-actions{
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+    padding:16px 20px 4px;
+    background:#d2eef2
+  }
+  /* hero overlay: logo, visible title and tagline */
+  .hero-stage{position:relative}
+  .hero-overlay{
+    position:absolute;inset:0;pointer-events:none;display:flex;align-items:flex-start;justify-content:flex-end;padding:28px;
+  }
+  .hero-logo{pointer-events:auto;width:86px;height:86px;border-radius:50%;background:#fff;padding:6px;box-shadow:0 6px 18px rgba(0,0,0,.12);object-fit:contain}
+  .hero-title-wrap{pointer-events:auto;margin-right:18vw;max-width:46%;text-align:right}
+  .hero-title{font-family:var(--display);color:#fff;font-weight:800;font-size:clamp(32px,6vw,66px);letter-spacing:.06em;text-transform:uppercase;line-height:0.95}
+  .hero-tagline{font-family:var(--script);color:rgba(255,255,255,.92);font-style:italic;margin-top:8px;font-size:20px}
+  .hero-tab{display:inline-block;margin-top:10px}
+  .hero-actions .btn.ghost{background:#fff;color:var(--green-deep);border-color:var(--green)}
+  .hero-actions .btn.ghost:hover{background:var(--green);color:#fff}
+  .cover-bar{
+    background:linear-gradient(180deg,#064E28,#083F20);
+    color:#fff;text-align:center;padding:14px 20px;font-size:15.5px;font-weight:700;letter-spacing:.04em
+  }
+  .cover-bar a{color:#fff}
+
+  /* ---------- org chart (PDF page 2) ---------- */
+  .org{
+    position:relative;
+    padding:56px 0 72px;
+    background:linear-gradient(180deg,#d2eef8 0%,#c5e4f4 38%,#c5e4f4 38%,transparent 38%);
+    overflow:hidden;
+  }
+  .org-band{
+    position:absolute;left:0;right:0;bottom:0;height:58%;
+    background:linear-gradient(180deg,#27487A 0%,#1A3568 100%);
+    pointer-events:none;
+  }
+  .org-in{position:relative;z-index:1}
+  .org-head{
+    display:grid;
+    grid-template-columns:minmax(240px,.9fr) 28px minmax(240px,1.1fr);
+    align-items:center;gap:0;margin-bottom:8px
+  }
+  .name-pill{
+    background:#eef7fb;color:var(--navy);
+    font-family:var(--display);font-weight:700;font-size:clamp(18px,2.2vw,26px);
+    letter-spacing:.06em;text-transform:uppercase;text-align:center;
+    padding:14px 22px;border-radius:999px;
+    border:5px solid var(--leaf);
+    box-shadow:0 0 0 6px #eef7fb, 0 0 0 10px var(--leaf);
+  }
+  .org-join{
+    height:5px;background:var(--navy);position:relative
+  }
+  .org-join::after{
+    content:"";position:absolute;right:-6px;top:50%;transform:translateY(-50%);
+    width:12px;height:12px;border-radius:50%;background:var(--navy)
+  }
+  .vision-card{
+    background:var(--navy);color:#fff;
+    border-radius:32px;padding:18px 28px 20px;
+    box-shadow:0 10px 24px rgba(12,26,56,.18)
+  }
+  .vision-card .k{font-family:var(--display);font-size:clamp(28px,3vw,36px);font-weight:700;letter-spacing:.02em}
+  .vision-card p{margin:4px 0 0;font-size:18px;line-height:1.35;color:#e8eef8}
+
+  .hang{
+    display:grid;grid-template-columns:repeat(4,1fr);
+    gap:18px;margin-top:28px;align-items:start
+  }
+  .hang-card{display:flex;flex-direction:column;align-items:center;position:relative}
+  .hang-stem{
+    width:3px;height:54px;background:var(--navy);margin-bottom:-18px;position:relative;z-index:0
+  }
+  .hang-icon{
+    width:86px;height:86px;border-radius:50%;
+    background:#f4f7fb;display:grid;place-items:center;
+    border:7px solid var(--ring,var(--leaf));
+    box-shadow:0 6px 0 rgba(0,0,0,.08);
+    position:relative;z-index:2
+  }
+  .hang-icon svg{width:42px;height:42px}
+  .banner{
+    width:100%;margin-top:-18px;padding:52px 16px 56px;
+    color:#fff;text-align:center;
+    clip-path:polygon(0 0,100% 0,100% calc(100% - 38px),50% 100%,0 calc(100% - 38px));
+    min-height:372px;
+    box-shadow:0 12px 20px rgba(0,20,40,.18)
+  }
+  .banner h3{
+    font-family:var(--display);font-weight:700;letter-spacing:.06em;
+    font-size:clamp(20px,2.2vw,28px);margin:0 0 12px;text-transform:uppercase
+  }
+  .banner p,.banner li{font-size:14.5px;line-height:1.4;color:#fff}
+  .banner ol{margin:0;padding-left:1.1em;text-align:left}
+  .banner li{margin:0 0 .35em}
+  .b-mission{background:linear-gradient(180deg,#F6B03A,#E89412)}
+  .b-values{background:linear-gradient(180deg,#22D0E6,#0AA8C8)}
+  .b-objectives{background:linear-gradient(180deg,#E94CA8,#C92D88)}
+  .b-goals{background:linear-gradient(180deg,#2A6FA3 0%,#4E9A78 48%,#8BC34A 100%)}
+  .b-goals .inner{
+    background:rgba(20,40,70,.22);border-radius:8px;padding:8px 6px
+  }
+  @media (max-width:900px){
+    .org-head{grid-template-columns:minmax(0,1fr);gap:16px}
+    .org-join{width:5px;height:28px;margin:0 auto}
+    .org-join::after{display:none}
+    .hang{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .banner{min-height:300px}
+    .org-band{height:70%}
+  }
+  @media (max-width:560px){
+    .hang{grid-template-columns:minmax(0,1fr);max-width:360px;margin-left:auto;margin-right:auto}
+    .name-pill{font-size:16px;letter-spacing:.04em;padding:12px 14px}
+  }
+
+  /* ---------- introduction ---------- */
+  .intro{padding:64px 0 72px}
+  .intro h2{
+    font-family:var(--display);color:var(--navy);font-size:clamp(28px,3.4vw,40px);
+    letter-spacing:.04em;text-transform:uppercase;margin:0 0 22px
+  }
+  .cols-2{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+  .intro p{color:var(--ink)}
+  .subhead{font-weight:800;color:var(--navy);margin:1.1em 0 .35em}
+  @media (max-width:760px){.cols-2{grid-template-columns:1fr;gap:8px}}
+
+  /* ---------- value chain ---------- */
+  .chain{padding:8px 0 64px}
+  .chain-rail{
+    display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:8px
+  }
+  .step{
+    background:#fff;border-radius:18px 18px 28px 28px;
+    padding:18px 16px 20px;text-align:center;
+    box-shadow:0 8px 0 rgba(12,120,60,.08);
+    border:2px solid #d7ebdd
+  }
+  .step .n{
+    display:inline-grid;place-items:center;
+    width:36px;height:36px;border-radius:50%;
+    background:var(--green);color:#fff;font-weight:800;font-size:14px;margin-bottom:8px
+  }
+  .step h4{font-family:var(--display);letter-spacing:.04em;color:var(--green-deep);font-size:18px;margin:0 0 6px}
+  .step p{font-size:14.5px;color:var(--muted);margin:0}
+  @media (max-width:800px){.chain-rail{grid-template-columns:1fr 1fr}}
+  @media (max-width:520px){.chain-rail{grid-template-columns:1fr}}
+
+  /* ---------- products (PDF page 3) ---------- */
+  .products{padding:12px 0 48px}
+  .cunda{
+    display:grid;grid-template-columns:1.15fr .9fr .9fr;gap:22px 20px;
+    align-items:start;margin-bottom:48px
+  }
+  .cunda h3{
+    font-size:clamp(22px,2.4vw,30px);font-weight:800;color:#111;margin:0 0 12px;line-height:1.2
+  }
+  .cunda .copy{grid-row:1}
+  .photo{
+    border-radius:18px;overflow:hidden;position:relative;
+    box-shadow:0 8px 18px rgba(20,40,20,.1)
+  }
+  .photo img{width:100%;height:100%;object-fit:cover;aspect-ratio:1.05}
+  .photo.tall img{aspect-ratio:.85}
+  .cap{
+    text-align:center;font-weight:800;font-size:14px;margin-top:8px;color:#222;line-height:1.25
+  }
+  .cunda-shot{position:relative}
+  .splat{
+    position:absolute;z-index:2;
+    right:-22px;top:-28px;
+    width:118px;height:118px;
+    background:var(--leaf);
+    color:#fff;text-align:center;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    font-weight:800;font-size:15px;line-height:1.05;
+    border-radius:63% 37% 54% 46% / 55% 45% 55% 45%;
+    box-shadow:
+      12px -8px 0 -6px var(--leaf),
+      -14px 10px 0 -8px var(--leaf),
+      16px 18px 0 -10px var(--leaf);
+    transform:rotate(-6deg)
+  }
+  .splat small{font-size:11px;font-weight:700;display:block;margin-top:2px;font-style:italic}
+  .prod-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:36px 48px;align-items:center
+  }
+  .prod-block h3{font-size:26px;font-weight:800;margin:0 0 10px}
+  .prod-block p{color:#222}
+  .prod-block .photo{max-width:280px}
+  .eshabwe-row{
+    display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center;
+    margin-top:8px
+  }
+  .eshabwe-row .photo{width:220px}
+  @media (max-width:900px){
+    .cunda{grid-template-columns:1fr 1fr}
+    .cunda .copy{grid-column:1/-1}
+  }
+  @media (max-width:640px){
+    .cunda,.prod-grid,.eshabwe-row{grid-template-columns:1fr}
+    .prod-block .photo,.eshabwe-row .photo{max-width:100%;width:100%}
+    .splat{right:8px;top:8px}
+  }
+
+  /* ---------- whey + voices (PDF page 4) ---------- */
+  .whey{padding:8px 0 8px}
+  .whey p{max-width:72ch}
+
+  .voices{padding:28px 0 48px}
+  .voices h2{
+    color:var(--green);font-size:clamp(22px,2.6vw,30px);font-weight:800;margin:0 0 22px
+  }
+  .bubbles{display:flex;flex-direction:column;gap:14px}
+  .bubble{
+    position:relative;color:#fff;
+    background:var(--teal);
+    border-radius:0 22px 22px 22px;
+    padding:14px 20px 14px 22px;
+    margin-left:28px;max-width:920px
+  }
+  .bubble::before{
+    content:"";position:absolute;left:-18px;top:0;
+    border-style:solid;border-width:0 20px 18px 0;
+    border-color:transparent var(--teal) transparent transparent
+  }
+  .bubble p{margin:0;font-size:16.5px;line-height:1.45}
+  .bubble cite{
+    display:block;margin-top:6px;font-style:normal;font-weight:800;font-size:15px
+  }
+  .bubble.alt{background:var(--teal-3);border-radius:22px 22px 22px 0}
+  .bubble.alt::before{
+    left:-16px;top:8px;border-width:12px 18px 12px 0;
+    border-color:transparent var(--teal-3) transparent transparent;
+    transform:rotate(-8deg)
+  }
+  .bubble.deep{background:var(--teal-2)}
+  .bubble.deep::before{border-right-color:var(--teal-2)}
+  .bubble.long{background:#0A5858;border-radius:22px}
+  .bubble.long::before{border-right-color:#0A5858}
+
+  /* ---------- outlook ---------- */
+  .outlook{padding:12px 0 64px}
+  .outlook h3{color:var(--green);font-size:26px;font-weight:800;margin:0 0 10px}
+  .outlook p{color:#222}
+
+  /* ---------- footer ---------- */
+  .site-foot{
+    background:linear-gradient(180deg,#0C843C 0%,#064E28 100%);
+    color:#E7F6EA;padding:36px 0 22px;
+    border-top:8px solid var(--green-deep)
+  }
+  .foot-in{
+    display:grid;grid-template-columns:auto 1fr auto;
+    gap:36px;align-items:center;text-align:center
+  }
+  .foot-in img{width:110px;background:#fff;border-radius:50%;padding:6px}
+  .site-foot h2{
+    font-family:var(--display);color:#fff;font-size:clamp(22px,3vw,32px);
+    letter-spacing:.04em;margin-bottom:8px
+  }
+  .site-foot a{color:#fff}
+  .phones{font-size:18px;font-weight:700}
+  .foot-cta{display:flex;flex-direction:column;gap:10px}
+  .colophon{
+    margin-top:22px;padding-top:14px;border-top:1px solid rgba(255,255,255,.2);
+    font-size:14px;color:#c5e6cc;text-align:center
+  }
+  @media (max-width:800px){
+    .foot-in{grid-template-columns:1fr;gap:18px}
+    .foot-cta{flex-direction:row;justify-content:center;flex-wrap:wrap}
+  }
+
+  /* topbar transparent state when over hero */
+  .topbar.transparent{background:transparent;box-shadow:none}
+  .topbar.transparent .wordmark,.topbar.transparent .nav a{color:#fff}
+  .topbar.transparent .btn{display:none}
+</style>
+</head>
+<body>
+
+<header class="topbar transparent">
+  <div class="wrap topbar-in">
+    <a class="wordmark" href="#top"><span class="sr-only">Rehoboth Springs Farm</span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+    <nav class="nav" id="menu" aria-label="Sections">
+      <a href="#about">About us</a>
+      <a href="#story">Our story</a>
+      <a href="#products">Products</a>
+      <a href="#voices">Clients</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero" aria-label="Company profile cover">
+    <div class="hero-stage">
+      <img class="hero-cover" src="assets/cover-hero.png" alt="Fresh milk pouring into a glass. Rehoboth Springs Farm logo. Healthy and Natural.">
+      <div class="hero-overlay">
+        <div class="hero-title-wrap"></div>
+      </div>
+      <div class="hero-actions">
+        <a class="btn" href="#products">See our products</a>
+        <a class="btn ghost" href="#contact">Place an order</a>
+      </div>
+    </div>
+  </section>
+  <div class="cover-bar">
+    Patience Rubabinda Mushengyezi
+    &nbsp;·&nbsp;
+    <a href="mailto:prmushengyezi@gmail.com">prmushengyezi@gmail.com</a>
+    &nbsp;·&nbsp;
+    Tel. <a href="tel:+256772518849">+256-772518849</a>
+  </div>
+
+  <section class="org" id="about">
+    <div class="org-band" aria-hidden="true"></div>
+    <div class="wrap org-in">
+      <div class="org-head">
+        <div class="name-pill">Rehoboth Spring Farm</div>
+        <div class="org-join" aria-hidden="true"></div>
+        <div class="vision-card">
+          <div class="k">Vision</div>
+          <p>Authentic milk products processed in Uganda.</p>
+        </div>
+      </div>
+
+      <div class="hang">
+        <article class="hang-card">
+          <div class="hang-stem"></div>
+          <div class="hang-icon" style="--ring:#F0A020">
+            <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+              <path d="M6 36 L24 12 L42 36 Z" stroke="#F0A020" stroke-width="2.6" fill="#fff"/>
+              <path d="M24 20 v-10" stroke="#F0A020" stroke-width="2.6"/>
+              <path d="M24 10 h10 l-3 4 h-7" fill="#F0A020"/>
+            </svg>
+          </div>
+          <div class="banner b-mission">
+            <h3>Mission</h3>
+            <p>To provide unique milk products through value addition to transform the lives of women, youths, and households in Uganda.</p>
+          </div>
+        </article>
+
+        <article class="hang-card">
+          <div class="hang-stem"></div>
+          <div class="hang-icon" style="--ring:#12C4D8">
+            <svg viewBox="0 0 48 48" aria-hidden="true">
+              <path d="M24 6 L42 24 L24 42 L6 24 Z" fill="none" stroke="#12C4D8" stroke-width="2.8"/>
+              <path d="M24 16 L32 24 L24 32 L16 24 Z" fill="#12C4D8"/>
+            </svg>
+          </div>
+          <div class="banner b-values">
+            <h3>Values</h3>
+            <ol>
+              <li>Quality</li>
+              <li>Integrity</li>
+              <li>Professionalism</li>
+              <li>Preservation</li>
+            </ol>
+          </div>
+        </article>
+
+        <article class="hang-card">
+          <div class="hang-stem"></div>
+          <div class="hang-icon" style="--ring:#D93696">
+            <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+              <circle cx="24" cy="24" r="14" stroke="#D93696" stroke-width="2.6"/>
+              <circle cx="24" cy="24" r="8" stroke="#D93696" stroke-width="2"/>
+              <circle cx="24" cy="24" r="2.5" fill="#D93696"/>
+              <path d="M24 4 v6 M24 38 v6 M4 24 h6 M38 24 h6" stroke="#D93696" stroke-width="2.4"/>
+            </svg>
+          </div>
+          <div class="banner b-objectives">
+            <h3>Objectives</h3>
+            <ol>
+              <li>To add value to the milk production chain.</li>
+              <li>To impart skills and create jobs for the youth and women by employing them in gainful and meaningful work.</li>
+              <li>To offer new and healthy milk products that are not currently on the market.</li>
+              <li>To preserve the authentic cuisine of traditional milk products.</li>
+            </ol>
+          </div>
+        </article>
+
+        <article class="hang-card">
+          <div class="hang-stem"></div>
+          <div class="hang-icon" style="--ring:#3D8EC4">
+            <svg viewBox="0 0 48 48" aria-hidden="true">
+              <path d="M24 8 l3.2 9.8 h10.3 l-8.3 6 3.2 9.8 L24 27.4 15.6 33.6 l3.2-9.8-8.3-6 h10.3 Z" fill="#3D8EC4"/>
+              <path d="M10 14 l3-6 M38 14 l-3-6 M8 30 l-4 2 M40 30 l4 2" stroke="#3D8EC4" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="banner b-goals">
+            <div class="inner">
+              <h3>Goals</h3>
+              <p>To produce a variety of milk products of good quality for the market.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="intro" id="story">
+    <div class="wrap">
+      <h2>Introduction</h2>
+      <div class="cols-2">
+        <div>
+          <p>Rehoboth Springs Farm is a registered company located in Wakiso Town Council, Wakiso District. I have always taken care of animals including birds, but in 2015 I decided to enroll for the Artisan Certificate in Dairy Industry and Business at Makerere University to acquire skills and learn how to professionally take care of animals. In addition, I wanted to have an alternative family source of income.</p>
+          <p>When I came to AFRISA I was taught how to do dairy farming as a business. This opened my eyes, and I took keen interest in the dairy value chain. We were taught how to process yoghurt and cheese.</p>
+          <p>In January 2019, something transformational happened. Originally, we were selling milk to the neighbours at UGX 1,400 per litre. The money could not maintain the cows and the farm. I started the idea of churning milk and selling ghee. I did not only get ghee, but I also got other byproducts like Amacunda (Cultured Buttermilk).</p>
+        </div>
+        <div>
+          <p>Which we have now re-branded Fat-Free Cunda Yoghurt (cultured buttermilk), Eshabwe and Amaranga (whey).</p>
+          <p class="subhead">Preserving the cultural aroma</p>
+          <p>Many people from western Uganda treasure milk, amakamo, amacunda and ghee, which have been kept in smoked gourds. The ghee, amacunda and amakamo are all processed and kept in smoked gourds known as ebishaabo, ebirere and entsimbo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="chain">
+    <div class="wrap">
+      <div class="tab">One litre, five products</div>
+      <div class="chain-rail">
+        <div class="step">
+          <span class="n">1</span>
+          <h4>Fresh milk</h4>
+          <p>Milk from the farm’s cows, collected for processing rather than sold raw.</p>
+        </div>
+        <div class="step">
+          <span class="n">2</span>
+          <h4>Churning</h4>
+          <p>The milk is churned. The ghee settles and is removed from the liquid.</p>
+        </div>
+        <div class="step">
+          <span class="n">3</span>
+          <h4>Ghee</h4>
+          <p>Healthy fats with Vitamin A, E and D — also spiced into ready-to-eat appetizer.</p>
+        </div>
+        <div class="step">
+          <span class="n">4</span>
+          <h4>Amacunda</h4>
+          <p>The liquid left behind, re-branded as Fat-Free Cunda Yoghurt. Ghee also becomes eshabwe.</p>
+        </div>
+        <div class="step">
+          <span class="n">5</span>
+          <h4>Amaranga</h4>
+          <p>The last by-product, whey — sold to pig farmers and used in different cuisines.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="products" id="products">
+    <div class="wrap">
+      <div class="tab">Our products</div>
+
+      <div class="cunda">
+        <div class="copy">
+          <h3>Fat-Free Yoghurt Cunda (Cultured Buttermilk)</h3>
+          <p>This product is produced after churning. Ghee settles and is removed. The liquid that remains is Fat-Free yoghurt. This improved traditional milk is good for both the young and old people. The protein found in this milk is called whey. It is more nutritious and has more bioactive compounds than the casein (solid protein). Whey contains all the essential amino acids in the proper proportions, making it an excellent source of nutrition for therapeutic and supplementary foods.</p>
+        </div>
+        <figure class="cunda-shot">
+          <div class="splat" aria-hidden="true">100%<small>Skimmed<br>Light Drink</small></div>
+          <div class="photo"><img src="assets/FAT -FREE YOGHURT 2 BOTTLES.jpg" alt="Bottles of Fat-Free Cunda Yoghurt in strawberry flavour"></div>
+          <figcaption class="cap">Fat-Free Cunda Yoghurt-<br>Strawberry</figcaption>
+        </figure>
+        <figure class="cunda-shot">
+          <div class="photo"><img src="assets/FAT FREE PLAIN.jpg" alt="Bottles of plain Fat-Free Cunda Yoghurt"></div>
+          <figcaption class="cap">Fat-Free Cunda<br>Yoghurt-Plain</figcaption>
+        </figure>
+      </div>
+
+      <div class="prod-grid">
+        <article class="prod-block">
+          <h3>Protein</h3>
+          <p>This drink is cherished by the youth who do body building who need it to tone their muscles and for persons interested in loosing excess body weight.</p>
+          <div class="photo" style="margin-top:14px"><img src="assets/PROTEIN 1.jpg" alt="Protein low-fat drink bottles"></div>
+        </article>
+        <article class="prod-block">
+          <h3>Ghee</h3>
+          <p>Ghee contains a good amount of healthy fats, Vitamin A, E and D. Many people think that the high content of fat in ghee is bad for health but, in fact, fat is one of the major nutrients that is required by our body to function properly.</p>
+          <div class="photo" style="margin-top:14px"><img src="assets/GHEE 1KG .jpg" alt="Tub of Rehoboth Springs Farm ghee"></div>
+        </article>
+        <article class="prod-block">
+          <div class="photo"><img src="assets/APPETIZER.jpg" alt="Cups of ready-to-eat spiced ghee appetizer"></div>
+        </article>
+        <article class="prod-block">
+          <h3>Appetizer – Ready to eat ghee</h3>
+          <p>This is a spiced delicacy. Well made for school going children (Boarding schools).</p>
+        </article>
+      </div>
+
+      <div class="eshabwe-row">
+        <article class="prod-block">
+          <h3>Eshabwe</h3>
+          <p>Eshabwe is a special cuisine got from ghee, which is treasured by people from western Uganda. It is now a treasured delicacy in most parts of the country during special occasions.</p>
+        </article>
+        <div class="photo"><img src="assets/ESHABWE BEST PHOTO.jpg" alt="Jar and cups of eshabwe"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="whey">
+    <div class="wrap">
+      <div class="tab">Amaranga (Whey)</div>
+      <p>This is the last by-product in the milk value chain. Although whey has huge potential of turning around the dairy industry, for now we sell it to pig farmers. It has the same nutritional value as amacunda including being used in preparation of different cuisines.</p>
+    </div>
+  </section>
+
+  <section class="voices" id="voices">
+    <div class="wrap">
+      <h2>What our clients say about our products</h2>
+      <div class="bubbles">
+        <blockquote class="bubble">
+          <p>This eshabwe is exquisite, thank you very much.</p>
+          <cite>Eunice.</cite>
+        </blockquote>
+        <blockquote class="bubble alt">
+          <p>Patience, this eshabwe is the best I’ve ever eaten! Very, very, tasty; please keep it up!</p>
+          <cite>Esther.</cite>
+        </blockquote>
+        <blockquote class="bubble deep">
+          <p>Good stuff. You know, I recently ordered some and you just can’t even compare it to the rubbish I had just been using from the supermarket. Good quality.</p>
+          <cite>Mutoni.</cite>
+        </blockquote>
+        <blockquote class="bubble">
+          <p>The best ghee I have ever tasted.</p>
+          <cite>Rukundo.</cite>
+        </blockquote>
+        <blockquote class="bubble alt">
+          <p>I recommend it 100%. It is what we use for eshabwe at Kezia’s Restaurant.</p>
+          <cite>Mable.</cite>
+        </blockquote>
+        <blockquote class="bubble long">
+          <p>Amacunda is a wonderful drink. Our children should taste some of the nutritious organic products that gave our bodies the foundations on which we are still surviving. Let me have the 5 litre jerry-can of amacunda delivered to my office tomorrow. I encourage all those who don't take milk because of fat that their prayers have been answered. Amacunda (buttermilk) has all the nutrients in milk, like proteins, vitamins and calcium, except fat, which some people don't need for health reasons. So, embrace this product when it is still available at this unbelievably good price.</p>
+          <cite>Mugisha</cite>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section class="outlook">
+    <div class="wrap cols-2">
+      <div>
+        <h3>Benefits</h3>
+        <p>The benefits from this milk value chain have been enormous, and they include various milk products to customers, feeds for piggery farmers, creation of jobs, provision of market for the crafts industry, and income to the farm. By adopting value addition, we have been able to earn a gross income of about UGX 7,000 per litre.</p>
+      </div>
+      <div>
+        <h3>Prospects</h3>
+        <p>We envisage to have a factory with modern equipment to fully optimise the processing of these milk products. This will provide milk products for families, a good market for dairy farmers, jobs for youths and women, and support Uganda’s economic growth.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot" id="contact">
+  <div class="wrap">
+    <div class="foot-in">
+      <img src="assets/logo.png" alt="Rehoboth Springs Farm logo">
+      <div>
+        <h2>Located in Wakiso Uganda</h2>
+        <p class="phones">
+          <a href="tel:+256772518849">+256(0) 772 518 849</a>
+          &nbsp;
+          <a href="tel:+256787255600">+256(0) 787 255 600</a>
+        </p>
+        <p>Email: <a href="mailto:prmushengyezi@gmail.com">prmushengyezi@gmail.com</a></p>
+      </div>
+      <div class="foot-cta">
+        <a class="btn light" href="https://wa.me/256772518849">Order on WhatsApp</a>
+        <a class="btn ghost" href="mailto:prmushengyezi@gmail.com">Send an email</a>
+      </div>
+    </div>
+    <div class="colophon">Rehoboth Springs Farm — Healthy and Natural · Wakiso Town Council, Wakiso District</div>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.querySelector(".nav-toggle");
+  const nav = document.querySelector(".nav");
+  if (toggle && nav) {
+    toggle.addEventListener("click", () => {
+      const open = nav.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", String(open));
+    });
+    nav.querySelectorAll("a").forEach((a) => {
+      a.addEventListener("click", () => {
+        nav.classList.remove("open");
+        toggle.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
+  // topbar transparent over hero: toggle based on scroll
+  const topbarEl = document.querySelector('.topbar');
+  function updateTopbar() {
+    if (!topbarEl) return;
+    if (window.scrollY > 40) topbarEl.classList.remove('transparent');
+    else topbarEl.classList.add('transparent');
+  }
+  updateTopbar();
+  window.addEventListener('scroll', updateTopbar, {passive:true});
+</script>
+</body>
+</html>
